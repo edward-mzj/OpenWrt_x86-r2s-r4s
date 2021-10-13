@@ -31,7 +31,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ["${{ github.event.client_payload.target }}"]
+        target: 
+          - x86_64 
+        #["${{ github.event.client_payload.target }}"]
         
     steps:
     - name: Checkout
@@ -169,7 +171,7 @@ jobs:
               
     - name: SSH connection to Actions
       uses: kiddin9/debugger-action@master
-      if: contains(github.event.action, 'ssh')
+      # if: contains(github.event.action, 'ssh')
 
     - name: Download package
       id: package
