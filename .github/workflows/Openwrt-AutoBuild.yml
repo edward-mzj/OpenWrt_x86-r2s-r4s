@@ -31,8 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: 
-          - x86_64 
+        target: [x86_64]
         #["${{ github.event.client_payload.target }}"]
         
     steps:
